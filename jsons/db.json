@@ -1,0 +1,101 @@
+{
+    "documents":[
+        {
+            "id":1,
+            "typeOfDocument": "Счет-фактура",
+            "documentNumber": "ABC-12345",
+            "dateDocument": "02.01.2002",
+            "belongTo":"Джеймс",
+            "description": "Златоуст холодно и дождливо, и подготовка к зиме начинается уже в сентябре. Люди здесь добрые и гостеприимные, и всегда рады помочь друг другу.",
+            "typeDocument":"Дополнительная",
+            "proxy":"Джеймсон Джейк"
+        },
+        {
+            "id":2,
+            "typeOfDocument": "Доверенность",
+            "documentNumber": "ABC-12345",
+            "belongTo":"Джек",
+            "dateDocument": "02.01.2002",
+            "description": "Златоуст холодно и дождливо, и подготовка к зиме начинается уже в сентябре. Люди здесь добрые и гостеприимные, и всегда рады помочь друг другу.",
+            "typeDocument":"Стандартная",
+            "proxy":"Джеймсон Джейк"
+        },
+        {
+            "id":3,
+            "typeOfDocument": "Счет-фактура",
+            "documentNumber": "ABC-12345",
+            "belongTo":"Сара",
+            "dateDocument": "02.01.2002",
+            "description": "Златоуст холодно и дождливо, и подготовка к зиме начинается уже в сентябре. Люди здесь добрые и гостеприимные, и всегда рады помочь друг другу.",
+            "typeDocument":"Дополнительная",
+            "proxy":"Джеймсон Джейк"
+        },
+        {
+            "id":4,
+            "belongTo":"Джеймс",
+            "typeOfDocument": "Доверенность",
+            "documentNumber": "ABC-12345",
+            "dateDocument": "02.01.2002",
+            "description": "Златоуст холодно и дождливо, и подготовка к зиме начинается уже в сентябре. Люди здесь добрые и гостеприимные, и всегда рады помочь друг другу.",
+            "typeDocument":"Стандартная",
+            "proxy":"Джеймсон Джейк"
+        },
+        {
+            "id":5,
+            "belongTo":"Джеймс",
+            "typeOfDocument": "Счет-фактура",
+            "documentNumber": "ABC-12345",
+            "dateDocument": "02.01.2002",
+            "description": "Златоуст холодно и дождливо, и подготовка к зиме начинается уже в сентябре. Люди здесь добрые и гостеприимные, и всегда рады помочь друг другу.",
+            "typeDocument":"Дополнительная",
+            "proxy":"Джеймсон Джейк"
+        }
+    ],
+    "wokerks":[
+        {
+            "id":1,
+            "firstName":"Джек",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passpotSeries":"AC567445",
+            "gender":"Мужской",
+            "isActive":true
+        },
+        {
+            "id":2,
+            "firstName":"Сара",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.2002",
+            "passpotSeries":"AC955939",
+            "gender":"Женский",
+            "isActive":true
+        },
+        {
+            "id":3,
+            "firstName":"Джеймс",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1986",
+            "passpotSeries":"AC455345",
+            "gender":"Мужской",
+            "isActive":true
+        },
+        {
+            "id":4,
+            "firstName":"Андрей",
+            "lastName":"Рабочий",
+            "dateOfBirth":"02.10.1977",
+            "passpotSeries":"AC567445",
+            "gender":"Не указан",
+            "isActive":true
+        },
+        {
+            "id":5,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passpotSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        }
+    ]
+}
