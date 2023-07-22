@@ -51,13 +51,13 @@
             "proxy":"Джеймсон Джейк"
         }
     ],
-    "wokerks":[
+    "workers":[
         {
             "id":1,
             "firstName":"Джек",
             "lastName":"Джейсон",
             "dateOfBirth":"02.10.1998",
-            "passpotSeries":"AC567445",
+            "passportSeries":"AC567445",
             "gender":"Мужской",
             "isActive":true
         },
@@ -66,7 +66,7 @@
             "firstName":"Сара",
             "lastName":"Джейсон",
             "dateOfBirth":"02.10.2002",
-            "passpotSeries":"AC955939",
+            "passportSeries":"AC955939",
             "gender":"Женский",
             "isActive":true
         },
@@ -75,7 +75,7 @@
             "firstName":"Джеймс",
             "lastName":"Джейсон",
             "dateOfBirth":"02.10.1986",
-            "passpotSeries":"AC455345",
+            "passportSeries":"AC455345",
             "gender":"Мужской",
             "isActive":true
         },
@@ -84,7 +84,7 @@
             "firstName":"Андрей",
             "lastName":"Рабочий",
             "dateOfBirth":"02.10.1977",
-            "passpotSeries":"AC567445",
+            "passportSeries":"AC567445",
             "gender":"Не указан",
             "isActive":true
         },
@@ -93,7 +93,142 @@
             "firstName":"Джейк",
             "lastName":"Джейсон",
             "dateOfBirth":"02.10.1998",
-            "passpotSeries":"AC567445",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":6,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":7,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":8,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":9,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":10,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":11,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":12,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":13,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":14,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":15,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":16,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":17,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":18,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":19,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
+            "gender":"Male",
+            "isActive":true
+        },
+        {
+            "id":20,
+            "firstName":"Джейк",
+            "lastName":"Джейсон",
+            "dateOfBirth":"02.10.1998",
+            "passportSeries":"AC567445",
             "gender":"Male",
             "isActive":true
         }
