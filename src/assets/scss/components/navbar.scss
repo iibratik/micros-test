@@ -1,0 +1,17 @@
+.nav{
+    &-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & .logo{
+            gap: 10px;
+        }
+    }
+    &-link{
+        font-weight: 700;
+    }
+
+}
+.v-toolbar__content{
+    justify-content: center;
+}

@@ -1,0 +1,11 @@
+.data-table{
+    &-title{
+        font-size: 24px;
+        font-weight: 700;
+    }
+    &-link{
+        color: #008AEE;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+}

@@ -1,0 +1,20 @@
+.document{
+    &-card{
+        &-title{
+            font-size: 22px;
+            font-weight: 700;
+        }
+    }
+    &-list{
+        &-title{
+            font-weight: 700;
+            font-size: 18px;
+        }
+        &s{
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

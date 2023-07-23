@@ -1,0 +1,21 @@
+.worker{
+    &-lists{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+    &-info{
+        &-title{
+            font-weight: 700;
+            font-size: 15px;
+        }
+    }
+    &-documents{
+        &-title{
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+    }
+}
