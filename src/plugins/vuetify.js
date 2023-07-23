@@ -21,6 +21,10 @@ const myCustomLightTheme = {
   },
 }
 
+
+// Vuetify sass
+
+
 // Vuetify - declaration
 const vuetify = createVuetify({
   components:{

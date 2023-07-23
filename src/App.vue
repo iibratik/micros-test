@@ -3,13 +3,13 @@
     <v-layout>
       <!-- <v-system-bar color="deep-purple darken-3"></v-system-bar>  -->
       <v-app>
-      <v-container>
       <v-app-bar
         color="primary"
-        prominent
+        class="nav-content"
       >
-    <Nabvar/>
+    <Nabvar class="v-col-9"/>
   </v-app-bar>
+      <v-container>
   <v-main>
         <router-view></router-view>
     </v-main>

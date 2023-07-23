@@ -6,6 +6,4 @@ import vuetify from "@/plugins/vuetify"
 // styles
 import "@/assets/scss/main.scss"
 
-
-
 createApp(App).use(store).use(vuetify).use(router).mount('#app')

@@ -1,12 +1,7 @@
 <template>
   <div>
     <v-row class="justify-center">
-      <v-col cols="2" class="surface">
-        <v-card>
-          
-        </v-card>
-      </v-col>
-      <v-col theme="surface" cols="8" style="margin-bottom: 70px;">
+      <v-col theme="surface" cols="10" style="margin-bottom: 70px;">
         <DataTable :headers="headers" :items="workers" :title="title" :search="search"></DataTable>
       </v-col>
     </v-row>

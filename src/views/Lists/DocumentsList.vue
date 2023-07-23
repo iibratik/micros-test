@@ -1,12 +1,7 @@
 <template>
   <div>
     <v-row class="justify-center">
-      <v-col cols="2" class="surface">
-        <v-card>
-
-        </v-card>
-      </v-col>
-      <v-col theme="surface" cols="8" style="margin-bottom: 70px;">
+      <v-col theme="surface" cols="10" style="margin-bottom: 70px;">
         <DataTable :headers="headers" :items="documents" :title="title" :search="search"></DataTable>
       </v-col>
     </v-row>
@@ -31,7 +26,7 @@ export default {
         { key: 'belongTo', title: 'Владелец' },
         { key: 'typeDocument', title: 'Тип документа' },
       ],
-      title: "Список рабочих"
+      title: "Список документов"
     }
   },
   computed: {

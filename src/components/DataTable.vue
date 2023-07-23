@@ -6,15 +6,15 @@
       <v-text-field
         v-model="search"
         append-icon="mdi-magnify"
-        label="Search"
+        label="Поиск"
         single-line
         hide-details
       ></v-text-field>
     </v-card-title>
     <v-data-table :headers="headersWithActions" :items="items" :search="search">
-      <template v-slot:item.actions="{ item }">
+      <template v-slot:item.actions="{ item  }">
         <v-btn @click="viewItem(item)" text>
-        <router-link :to="`/worker/${item.raw.id}`">
+        <router-link class=" data-table-link" :to="`/worker/${item.raw.id}`">
           Подробнее
         </router-link>
         </v-btn>
@@ -48,7 +48,7 @@ export default {
     headersWithActions() {
       return [
         ...this.headers,
-        { key: 'actions', title: 'Действия', sortable: false, },
+        { key: 'actions', title: 'Действия ', sortable: false, },
       ]
     },
   },
