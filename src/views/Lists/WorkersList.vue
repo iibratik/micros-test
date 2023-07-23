@@ -2,7 +2,7 @@
   <div>
     <v-row class="justify-center">
       <v-col theme="surface" cols="10" style="margin-bottom: 70px;">
-        <DataTable :headers="headers" :items="workers" :title="title" :search="search"></DataTable>
+        <DataTable :link="link" :headers="headers" :items="workers" :title="title" :search="search"></DataTable>
       </v-col>
     </v-row>
   </div>
@@ -15,6 +15,7 @@ export default {
   data() {
     return {
       search: '',
+      link:"worker",
       headers: [
         {
           align: 'start',

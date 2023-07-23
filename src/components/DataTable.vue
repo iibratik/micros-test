@@ -13,10 +13,8 @@
     </v-card-title>
     <v-data-table :headers="headersWithActions" :items="items" :search="search">
       <template v-slot:item.actions="{ item  }">
-        <v-btn @click="viewItem(item)" text>
-        <router-link class=" data-table-link" :to="`/worker/${item.raw.id}`">
+        <v-btn class=" data-table-link" :to="`/${link}/${item.raw.id}`" @click="viewItem(item)" text>
           Подробнее
-        </router-link>
         </v-btn>
       </template>
     </v-data-table>
@@ -43,6 +41,10 @@ export default {
       type: Array,
       required: true,
     },
+    link:{
+      type: String,
+      required: true,
+    }
   },
   computed: {
     headersWithActions() {
