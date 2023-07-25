@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "serve": "json-server --watch jsons/db.json -p3000 && vue-cli-service serve",
-    "dev": "json-server --watch jsons/db.json -p3000 && vue-cli-service serve",
     "build": "vue-cli-service build",
     "json": "json-server --watch jsons/db.json"
   },
