@@ -70,14 +70,14 @@ export default {
       documentHeader: [
         {
           align: 'start',
-          sortable: true,
+          sortable: false,
           key: 'typeOfDocument',
           title: 'Тип документа',
         },
-        { key: 'documentNumber', title: 'Номер документа' },
-        { key: 'dateDocument', title: 'Дата создания' },
+        { key: 'documentNumber', title: 'Номер документа', sortable: false},
+        { key: 'dateDocument', title: 'Дата создания', sortable: false},
         { key: 'belongTo', title: 'Владелец', sortable: false },
-        { key: 'typeDocument', title: 'Тип документа' },
+        { key: 'typeDocument', title: 'Тип документа', sortable: false },
       ],
     }
   },

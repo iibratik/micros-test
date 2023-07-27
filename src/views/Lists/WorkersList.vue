@@ -1,26 +1,38 @@
 <template>
   <div>
     <v-row class="justify-center">
-      <v-col theme="surface" cols="10" style="margin-bottom: 70px;">
-        <DataTable :link="link" :headers="headers" :items="workers" :title="title" :search="search"></DataTable>
+      <v-col cols="2">
+        <SortWinVue :cardTitle="cardTitle" />
+      </v-col>
+      <v-col theme="surface" cols="8" style="margin-bottom: 70px">
+        <SortDataTable
+          :link="link"
+          :headers="headers"
+          :items="workers"
+          :title="title"
+          :search="search"
+        ></SortDataTable>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import DataTable from '@/components/DataTable.vue'
+import SortDataTable from '@/components/SortDataTable.vue'
+import SortWinVue from '@/components/SortWin.vue'
 export default {
-  components: { DataTable },
+  components: { SortDataTable, SortWinVue },
   data() {
     return {
       search: '',
-      link:"worker",
+      link: 'worker',
+      cardTitle: 'Сортировать по:',
       headers: [
         {
           align: 'start',
           sortable: false,
-          key: 'firstName', title: 'Имя'
+          key: 'firstName',
+          title: 'Имя',
         },
         { key: 'lastName', title: 'Фамилия' },
         { key: 'dateOfBirth', title: 'Дата рождения' },
@@ -28,7 +40,7 @@ export default {
         // { key: "link", title:'Страница рабочего'},
         { key: 'gender', title: 'Пол' },
       ],
-      title: "Список рабочих"
+      title: 'Список рабочих',
     }
   },
   computed: {
@@ -37,7 +49,7 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('fetchWorkers') // Действие для получения списка Рабочих
+    this.$store.dispatch('fetchSortedWorkes') // Действие для получения списка Рабочих
   },
 }
 </script>

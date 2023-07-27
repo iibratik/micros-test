@@ -44,18 +44,15 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-});
+})
 
 // Глобальный навигационный хук `afterEach`
 router.afterEach((to) => {
   if (to.meta.title) {
-    document.title = to.meta.title;
-    localStorage.setItem('pageTitle', to.meta.title); // Сохранение заголовока в localStorage
+    document.title = to.meta.title
   } else {
-    document.title = 'micros test'; // title по default
-    localStorage.removeItem('pageTitle'); // Удаление сохраненного заголовока из localStorage
+    document.title = 'Страница' // title по default
   }
-});
-
+})
 
 export default router

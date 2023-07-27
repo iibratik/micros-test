@@ -2,16 +2,16 @@
   <div>
     <v-row class="justify-center">
       <v-col theme="surface" cols="10" style="margin-bottom: 70px;">
-        <DataTable :link="link" :headers="headers" :items="documents" :title="title" :search="search"></DataTable>
+        <SortDataTable :link="link" :headers="headers" :items="documents" :title="title" :search="search"></SortDataTable>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import DataTable from '@/components/DataTable.vue'
+import SortDataTable from '@/components/SortDataTable.vue'
 export default {
-  components: { DataTable },
+  components: { SortDataTable },
   data() {
     return {
       search: '',
@@ -34,9 +34,10 @@ export default {
     documents() {
       return this.$store.getters.getDocuments
     },
+    
   },
   created() {
-    this.$store.dispatch('fetchDocuments') // Действие для получения списка Рабочих
+    this.$store.dispatch('fetchSortedDocuments') // Действие для получения списка Рабочих
   },
 }
 </script>

@@ -1,33 +1,17 @@
 <template>
-  <v-card>
-    <v-card-title>
-      <span class="data-table-title">{{ title }}</span>
-      <v-spacer></v-spacer>
-      <v-text-field
-        v-model="search"
-        append-icon="mdi-magnify"
-        label="Поиск"
-        single-line
-        hide-details
-      ></v-text-field>
-    </v-card-title>
-    <v-data-table :headers="headersWithActions" :items="items" :search="search">
+  <v-card-title primary-title>
+    {{ title }}
+  </v-card-title>
+  <v-data-table :headers="headersWithActions" :items="items">
       <template v-slot:item.actions="{ item  }">
-        <v-btn class=" data-table-link" :to="`/${link}/${item.raw.id}`" @click="viewItem(item)" text>
+        <v-btn class=" data-table-link" :to="`/${link}/${item.raw.id}`" text>
           Подробнее
         </v-btn>
       </template>
     </v-data-table>
-  </v-card>
 </template>
-
 <script>
 export default {
-  data() {
-    return {
-      search: '',
-    }
-  },
   props: {
     title: {
       type: String,
@@ -54,16 +38,7 @@ export default {
       ]
     },
   },
-  methods: {
-    viewItem(item) {
-      // Handle the action when "View" button is clicked
-      console.log('Viewing item:', item.raw.id)
-      // You can replace the console.log with your custom logic to view the item in detail.
-    },
-  },
 }
 </script>
 
-<style lang="scss" scoped>
-/* Add any custom styles here */
-</style>
+<style lang="scss" scoped></style>
