@@ -1,32 +1,32 @@
-import { createStore } from 'vuex';
+import { createStore } from 'vuex'
 
 export default createStore({
   state: {
     documents: [], // Массив с документами
     workers: [], // Массив с работниками
     sortWorkersParam: '', // Параметр для сортировки
-    sortDocumentsParam:'',
+    sortDocumentsParam: '',
   },
   getters: {
     getDocuments(state) {
-      return state.documents;
+      return state.documents
     },
     getSortWorkersParams(state) {
-      return state.sortWorkersParam;
+      return state.sortWorkersParam
     },
     getSortDocumentsParams(state) {
-      return state.sortDocumentsParam;
+      return state.sortDocumentsParam
     },
     getWorkers(state) {
-      return state.workers;
+      return state.workers
     },
     // Получение работника по id
     getWorkerById: (state) => (id) => {
-      return state.workers.find((worker) => worker.id === id);
+      return state.workers.find((worker) => worker.id === id)
     },
     // Получение документа по id
     getDocumentById: (state) => (id) => {
-      return state.documents.find((document) => document.id === id);
+      return state.documents.find((document) => document.id === id)
     },
   },
   mutations: {
@@ -36,8 +36,11 @@ export default createStore({
     setWorkers(state, workers) {
       state.workers = workers;
     },
-    setSortParam(state, sortParam) {
-      state.sortParam = sortParam;
+    setSortWorkersParam(state, sortParam) { // Fix the mutation name here
+      state.sortWorkersParam = sortParam;
+    },
+    setSortDocumentsParam(state, sortParam) { // Add the correct mutation for sortDocumentsParam
+      state.sortDocumentsParam = sortParam;
     },
   },
   actions: {
@@ -53,19 +56,26 @@ export default createStore({
     //   const data = await response.json();
     //   commit('setWorkers', data);
     // },
-    // Получение отсортированных рабочих
-    async fetchSortedWorkes({ commit, getters }) {
+    updateSortWorkersParams({ commit }, sortParams) {
+      commit('setSortWorkersParam', sortParams);
+    },
+    updateSortDocumentsParams({ commit }, sortParams) {
+      commit('setSortDocumentsParam', sortParams);
+    },
+    async fetchSortedWorkers({ commit, getters }) {
       const sortWorkerParam = getters.getSortWorkersParams;
       const response = await fetch(`http://localhost:3000/workers?${sortWorkerParam}`);
       const data = await response.json();
       commit('setWorkers', data);
     },
     async fetchSortedDocuments({ commit, getters }) {
-      const sortWorkerParam = getters.getSortWorkersParams;
-      const response = await fetch(`http://localhost:3000/documents?${sortWorkerParam}`);
+      const sortDocumentParam = getters.getSortDocumentsParams;
+      const response = await fetch(`http://localhost:3000/documents?${sortDocumentParam}`);
       const data = await response.json();
       commit('setDocuments', data);
     },
+
+
   },
   modules: {},
-});
+})

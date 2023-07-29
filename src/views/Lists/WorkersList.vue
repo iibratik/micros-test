@@ -2,7 +2,10 @@
   <div>
     <v-row class="justify-center">
       <v-col cols="2">
-        <SortWinVue :cardTitle="cardTitle" />
+        <SortWin
+          :sortParams="sortParams"
+          @sort-changed="handleSortChanged"
+        />
       </v-col>
       <v-col theme="surface" cols="8" style="margin-bottom: 70px">
         <SortDataTable
@@ -19,14 +22,31 @@
 
 <script>
 import SortDataTable from '@/components/SortDataTable.vue'
-import SortWinVue from '@/components/SortWin.vue'
+import SortWin from '@/components/SortWin.vue'
 export default {
-  components: { SortDataTable, SortWinVue },
+  components: { SortDataTable, SortWin },
   data() {
     return {
       search: '',
       link: 'worker',
-      cardTitle: 'Сортировать по:',
+      sortParams: [
+        {
+          paramTitle: 'Пол',
+          paramValue: 'gender',
+          options: [
+            { label: 'Мужчины', value: 'Мужской', selected: false },
+            { label: 'Женщины', value: 'Женский', selected: false },
+          ],
+        },
+        {
+          paramTitle: 'Активность',
+          paramValue: 'isActive',
+          options: [
+            { label: 'Активные', value: true, selected: false },
+            { label: 'Неактивные', value: false, selected: false },
+          ],
+        },
+      ],
       headers: [
         {
           align: 'start',
@@ -47,9 +67,21 @@ export default {
     workers() {
       return this.$store.getters.getWorkers
     },
+
   },
   created() {
     this.$store.dispatch('fetchSortedWorkes') // Действие для получения списка Рабочих
   },
+  methods:{
+    handleSortChanged(selectedOptions){
+      const sortWorkerParam = selectedOptions.join('&');
+      console.log(sortWorkerParam);
+
+      // Вызываем action для обновления параметра сортировки
+      this.$store.dispatch('updateSortWorkersParams', sortWorkerParam);
+      // Вызываем action для запроса отсортированных данных
+      this.$store.dispatch('fetchSortedWorkes');
+    }
+  }
 }
 </script>

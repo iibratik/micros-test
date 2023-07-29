@@ -53,6 +53,24 @@ export default {
   },
   data() {
     return {
+      sortParams: [
+        {
+          paramTitle: 'Тип документа',
+          paramValue: 'gender',
+          options: [
+            { label: 'Мужчины', value: 'Мужской', selected: false },
+            { label: 'Женщины', value: 'Женский', selected: false },
+          ],
+        },
+        {
+          paramTitle: 'Активность',
+          paramValue: 'isActive',
+          options: [
+            { label: 'Активные', value: true, selected: false },
+            { label: 'Неактивные', value: false, selected: false },
+          ],
+        },
+      ],
       workerData: [
         {
           title: 'Дата рождения',
@@ -104,8 +122,8 @@ export default {
   },
   async created() {
     // Получаем документы и рабочих при загрузке страницы
-    await this.$store.dispatch('fetchDocuments')
-    await this.$store.dispatch('fetchWorkers')
+    await this.$store.dispatch('fetchSortedDocuments')
+    await this.$store.dispatch('fetchSortedWorkes')
 
     // Обновляем данные рабочего при загрузке страницы
     this.updateWorkerData()
