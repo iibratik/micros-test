@@ -78,7 +78,6 @@ export default {
   methods: {
     handleSortChanged(selectedOptions) {
       const sortDocumentParam = selectedOptions.join('&')
-      console.log(sortDocumentParam)
       // Вызываем action для обновления параметра сортировки
       this.$store.dispatch('updateSortDocumentsParams', sortDocumentParam)
       // Вызываем action для запроса отсортированных данных
