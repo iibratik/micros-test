@@ -8,6 +8,7 @@
         />
       </v-col>
       <v-col theme="surface" cols="8" style="margin-bottom: 70px">
+        <v-card>
         <SortDataTable
           :link="link"
           :headers="headers"
@@ -15,6 +16,7 @@
           :title="title"
           :search="search"
         ></SortDataTable>
+        </v-card>
       </v-col>
     </v-row>
   </div>
@@ -70,18 +72,19 @@ export default {
 
   },
   created() {
-    this.$store.dispatch('fetchSortedWorkes') // Действие для получения списка Рабочих
-  },
-  methods:{
-    handleSortChanged(selectedOptions){
-      const sortWorkerParam = selectedOptions.join('&');
-      console.log(sortWorkerParam);
+  this.$store.dispatch('fetchSortedWorkers'); // Действие для получения списка Рабочих
+},
 
-      // Вызываем action для обновления параметра сортировки
-      this.$store.dispatch('updateSortWorkersParams', sortWorkerParam);
-      // Вызываем action для запроса отсортированных данных
-      this.$store.dispatch('fetchSortedWorkes');
-    }
+methods: {
+  handleSortChanged(selectedOptions) {
+    const sortWorkerParam = selectedOptions.join('&');
+    console.log(sortWorkerParam);
+
+    // Вызываем action для обновления параметра сортировки
+    this.$store.dispatch('updateSortWorkersParams', sortWorkerParam);
+    // Вызываем action для запроса отсортированных данных
+    this.$store.dispatch('fetchSortedWorkers');
   }
+}
 }
 </script>

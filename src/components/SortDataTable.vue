@@ -1,5 +1,4 @@
 <template>
-  <v-card>
     <v-card-title>
       <span class="data-table-title">{{ title }}</span>
       <v-text-field
@@ -10,14 +9,20 @@
         hide-details
       ></v-text-field>
     </v-card-title>
-    <v-data-table no-data-text="Нет данных!" :loading="loaderStatus"  :headers="headersWithActions" :items="items" :search="search">
-      <template v-slot:item.actions="{ item  }">
-        <v-btn class=" data-table-link" :to="`/${link}/${item.raw.id}`" text>
+    <v-data-table
+      no-data-text="Нет данных!"
+      :loading="loaderStatus"
+      :headers="headersWithActions"
+      :items="items"
+      border="none"
+      :search="search"
+    >
+      <template v-slot:item.actions="{ item }">
+        <v-btn class="data-table-link" :to="`/${link}/${item.raw.id}`" text>
           Подробнее
         </v-btn>
       </template>
     </v-data-table>
-  </v-card>
 </template>
 
 <script>
@@ -25,7 +30,7 @@ export default {
   data() {
     return {
       search: '',
-      loaderStatus: true
+      loaderStatus: true,
     }
   },
   props: {
@@ -41,25 +46,33 @@ export default {
       type: Array,
       required: true,
     },
-    link:{
+    link: {
       type: String,
       required: true,
-    }
+    },
   },
-  watch:{
+  watch: {
     items: {
       immediate: true, // Вызвать обработчик наблюдения сразу после монтирования компонента
       handler(newItems) {
         // Если items пустой, установить loaderStatus в true, иначе в false
-        this.loaderStatus = newItems.length === 0;
-      }
-    }
+        if (newItems.length == 0) {
+          this.loaderStatus = true
+          setTimeout(() => {
+            this.loaderStatus = false
+          }, 2000)
+        }else{
+          this.loaderStatus = false
+
+        }
+      },
+    },
   },
   computed: {
     headersWithActions() {
       return [
         ...this.headers,
-        { key: 'actions', title: 'Действия ', sortable: false, },
+        { key: 'actions', title: 'Действия ', sortable: false },
       ]
     },
   },

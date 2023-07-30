@@ -27,6 +27,7 @@
             ></v-icon>
           </li>
         </ul>
+
         <DataTable
           :title="`Документы, принадлежащие рабочему:`"
           :items="workerDocuments"
@@ -36,6 +37,7 @@
         />
         <v-card-subtitle v-else>Нет документов для этого рабочего.</v-card-subtitle>
       </v-card-text>
+      <v-btn color="primary" to="/workers" prepend-icon="mdi-arrow-left-bold" variant="outlined"> Обратно к списку</v-btn>
     </v-card>
   <v-card v-else>
     <!-- Если что-то не загрузится -->

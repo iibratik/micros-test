@@ -2,19 +2,18 @@
   <div>
     <v-row class="justify-center">
       <v-col cols="2">
-        <SortWin
-          :sortParams="sortParams"
-          @sort-changed="handleSortChanged"
-        />
+        <SortWin :sortParams="sortParams" @sort-changed="handleSortChanged" />
       </v-col>
       <v-col theme="surface" cols="8" style="margin-bottom: 70px">
-        <SortDataTable
-          :link="link"
-          :headers="headers"
-          :items="documents"
-          :title="title"
-          :search="search"
-        ></SortDataTable>
+        <v-card class="lists-card">
+          <SortDataTable
+            :link="link"
+            :headers="headers"
+            :items="documents"
+            :title="title"
+            :search="search"
+          ></SortDataTable>
+        </v-card>
       </v-col>
     </v-row>
   </div>
@@ -40,11 +39,15 @@ export default {
           ],
         },
         {
-          paramTitle: 'Активность',
-          paramValue: 'isActive',
+          paramTitle: 'Доп тип документа',
+          paramValue: 'typeDocument',
           options: [
-            { label: 'Активные', value: true, selected: false },
-            { label: 'Неактивные', value: false, selected: false },
+            { label: 'Стандартная', value: 'Стандартная', selected: false },
+            {
+              label: 'Дополнительная',
+              value: 'Дополнительная',
+              selected: false,
+            },
           ],
         },
       ],
@@ -69,18 +72,18 @@ export default {
     },
   },
   created() {
-  this.$store.dispatch('fetchSortedDocuments'); // Действие для получения списка документов
-},
+    this.$store.dispatch('fetchSortedDocuments') // Действие для получения списка документов
+  },
 
-methods: {
-  handleSortChanged(selectedOptions) {
-    const sortDocumentParam = selectedOptions.join('&');
-    console.log(sortDocumentParam);
-    // Вызываем action для обновления параметра сортировки
-    this.$store.dispatch('updateSortDocumentsParams', sortDocumentParam);
-    // Вызываем action для запроса отсортированных данных
-    this.$store.dispatch('fetchSortedDocuments');
-  }
-}
+  methods: {
+    handleSortChanged(selectedOptions) {
+      const sortDocumentParam = selectedOptions.join('&')
+      console.log(sortDocumentParam)
+      // Вызываем action для обновления параметра сортировки
+      this.$store.dispatch('updateSortDocumentsParams', sortDocumentParam)
+      // Вызываем action для запроса отсортированных данных
+      this.$store.dispatch('fetchSortedDocuments')
+    },
+  },
 }
 </script>
