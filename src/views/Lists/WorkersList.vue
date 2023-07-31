@@ -14,7 +14,6 @@
           :headers="headers"
           :items="workers"
           :title="title"
-          :search="search"
         ></SortDataTable>
         </v-card>
       </v-col>
@@ -29,7 +28,6 @@ export default {
   components: { SortDataTable, SortWin },
   data() {
     return {
-      search: '',
       link: 'worker',
       sortParams: [
         {

@@ -11,7 +11,6 @@
             :headers="headers"
             :items="documents"
             :title="title"
-            :search="search"
           ></SortDataTable>
         </v-card>
       </v-col>
@@ -27,7 +26,6 @@ export default {
   components: { SortDataTable, SortWin },
   data() {
     return {
-      search: '',
       link: 'document',
       sortParams: [
         {
@@ -39,7 +37,7 @@ export default {
           ],
         },
         {
-          paramTitle: 'Доп тип документа',
+          paramTitle: 'Тип счет-фактуры',
           paramValue: 'typeDocument',
           options: [
             { label: 'Стандартная', value: 'Стандартная', selected: false },
@@ -61,7 +59,7 @@ export default {
         { key: 'documentNumber', title: 'Номер документа' },
         { key: 'dateDocument', title: 'Дата создания' },
         { key: 'belongTo', title: 'Владелец' },
-        { key: 'typeDocument', title: 'Тип документа' },
+        { key: 'typeDocument', title: 'Тип счет-фактуры' },
       ],
       title: 'Список документов',
     }
